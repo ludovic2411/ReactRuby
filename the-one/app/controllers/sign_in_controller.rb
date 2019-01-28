@@ -14,5 +14,17 @@ class SignInController < ApplicationController
     else
       not_authorized
     end
-end
+  end
+
+  def destroy
+    session = JWTSessions::Session.new(payload: payload)
+    session.flush_by_access_payload
+    render json: :ok
+  end
+
+  private
+
+  def not_found
+    render json: { error: 'Cannont find such email/password combination' }, status: :not_found
+  end
 end
