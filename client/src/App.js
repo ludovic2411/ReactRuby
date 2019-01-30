@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="App" style={{display:'grid',gridTemplateRows:"repeat(3,1fr)",gridTemplateColumns:"repeat(3,1fr)",height:"100vh",backgroundColor:deepPurple[500]}}>
-          <div className="list" style={{gridRow:"2",gridColumn:"2",width:"60%",marginRight:"auto",marginLeft:"auto",color:"white",border:"solid 2px white",borderRadius:"10%",paddingLeft:"70px",paddingTop:"30px"}}>
+          <div className="list" style={{gridRow:"2",gridColumn:"2",width:"60%",marginRight:"auto",marginLeft:"auto",color:"white",border:"solid 2px white",borderRadius:"10%",paddingLeft:"70px",paddingTop:"20px"}}>
             <ul>
               <li style={{textDecoration:"none"}}>
                 <Link  style={{color:"white"}} to="/sign_in">Sign in</Link>

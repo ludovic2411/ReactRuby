@@ -11,15 +11,20 @@ class signIn  extends Component {
     password:"your password"} ;
     this.handleSubmit=this.handleSubmit.bind(this);
     this.handleEmail=this.handleEmail.bind(this);
+    this.handlePassword=this.handlePassword.bind(this);
   }
 
   handleSubmit(event){
     event.preventDefault();
-    alert(this.state.email)
+    alert(this.state.password)
   }
 
   handleEmail(data){
     this.setState({email:data});
+  }
+
+  handlePassword(data){
+    this.setState({password:data});
   }
 
 
@@ -29,10 +34,11 @@ class signIn  extends Component {
       <div>
         <h2>Sign in</h2>
         <form>
-          <TextInput value={this.state.email} label="Your email" handlerFromParent={this.handleEmail}/>
+          <TextInput type="text" value={this.state.email} label="Your email" handlerFromParent={this.handleEmail}/>
+          <TextInput type="password" value={this.state.password} label="Your password" handlerFromParent={this.handlePassword}/>
           <Submit function={this.handleSubmit} text="Login"/>
+          <Link style={{textDecoration:"none", color:"white"}} to="/">Home</Link>
         </form>
-        <Link style={{textDecoration:"none", color:"white"}} to="/">Home</Link>
       </div>
     );
   }

@@ -22,6 +22,7 @@ class TextInput  extends Component {
     return (
       <div>
       <Input
+      type={this.props.type}
       label={this.props.label}
       defaultValue={this.props.value}
       startAdornment={
@@ -39,6 +40,7 @@ class TextInput  extends Component {
 TextInput.propTypes={
   value:PropTypes.string.isRequired,
   label:PropTypes.string.isRequired,
+  type:PropTypes.string.isRequired,
   handlerFromParent:PropTypes.func.isRequired
 }
 
