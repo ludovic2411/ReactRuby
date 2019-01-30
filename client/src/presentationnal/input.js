@@ -13,23 +13,24 @@ class TextInput  extends Component {
   }
 
   handleChange(event){
-    this.setState({inputValue:event.target.value});
-    this.props.handlerFromParent(this.state.inputValue);
+    this.setState({inputValue:event.target.value},()=>{
+      this.props.handlerFromParent(this.state.inputValue);
+    })
   }
 
   render() {
     return (
       <div>
-        <Input
-          label={this.props.label}
-          defaultValue={this.props.value}
-          startAdornment={
-            <InputAdornment position="start">
-              <AccountCircle />
-            </InputAdornment>
-          }
-          onChange={this.handleChange}
-        />
+      <Input
+      label={this.props.label}
+      defaultValue={this.props.value}
+      startAdornment={
+        <InputAdornment position="start">
+        <AccountCircle />
+        </InputAdornment>
+      }
+      onChange={this.handleChange}
+      />
       </div>
     );
   }
