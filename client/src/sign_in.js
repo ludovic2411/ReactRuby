@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import TextInput from './presentationnal/input';
 import Submit from './presentationnal/submit';
-import { Link } from "react-router-dom";
 
 class signIn  extends Component {
 
@@ -37,7 +36,6 @@ class signIn  extends Component {
           <TextInput type="text" value={this.state.email} label="Your email" handlerFromParent={this.handleEmail}/>
           <TextInput type="password" value={this.state.password} label="Your password" handlerFromParent={this.handlePassword}/>
           <Submit function={this.handleSubmit} text="Login"/>
-          <Link style={{textDecoration:"none", color:"white"}} to="/">Home</Link>
         </form>
       </div>
     );
