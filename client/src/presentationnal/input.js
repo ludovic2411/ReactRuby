@@ -6,6 +6,17 @@ import PropTypes from 'prop-types';
 
 class TextInput  extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state ={inputValue:""} ;
+    this.handleChange=this.handleChange.bind(this);
+  }
+
+  handleChange(event){
+    this.setState({inputValue:event.target.value});
+    this.props.handlerFromParent(this.state.inputValue);
+  }
+
   render() {
     return (
       <div>
@@ -17,6 +28,7 @@ class TextInput  extends Component {
               <AccountCircle />
             </InputAdornment>
           }
+          onChange={this.handleChange}
         />
       </div>
     );
@@ -25,7 +37,8 @@ class TextInput  extends Component {
 
 TextInput.propTypes={
   value:PropTypes.string.isRequired,
-  label:PropTypes.string.isRequired
+  label:PropTypes.string.isRequired,
+  handlerFromParent:PropTypes.func.isRequired
 }
 
 export default TextInput ;
