@@ -37,7 +37,7 @@ class TextInput  extends Component {
         <Input
         type={this.state.passwordVisible? "text":"password" }
         label={this.props.label}
-        defaultValue={this.props.value}
+        placeholder={this.props.value}
         startAdornment={
           <InputAdornment position="start">
           <AccountCircle />
@@ -59,7 +59,7 @@ class TextInput  extends Component {
         <div>
         <Input
         label={this.props.label}
-        defaultValue={this.props.value}
+        placeholder={this.props.value}
         startAdornment={
           <InputAdornment position="start">
           <AccountCircle />
