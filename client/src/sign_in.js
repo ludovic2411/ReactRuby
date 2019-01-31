@@ -15,7 +15,9 @@ class signIn  extends Component {
 
   handleSubmit(event){
     event.preventDefault();
-    alert(this.state.password)
+    if(this.state.email==="foo" && this.state.password==="bar"){
+      alert("login!")
+    }
   }
 
   handleEmail(data){
