@@ -33,8 +33,8 @@ class signIn  extends Component {
       <div>
         <h2>Sign in</h2>
         <form>
-          <TextInput type="text" value={this.state.email} label="Your email" handlerFromParent={this.handleEmail}/>
-          <TextInput type="password" value={this.state.password} label="Your password" handlerFromParent={this.handlePassword}/>
+          <TextInput type="text" value={this.state.email} label="Your email" handlerFromParent={this.handleEmail} isPassword={false}/>
+          <TextInput type="password" value={this.state.password} label="Your password" handlerFromParent={this.handlePassword} isPassword={true}/>
           <Submit function={this.handleSubmit} text="Login"/>
         </form>
       </div>
