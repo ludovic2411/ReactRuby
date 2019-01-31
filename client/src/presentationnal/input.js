@@ -12,9 +12,10 @@ class TextInput  extends Component {
   constructor(props) {
     super(props);
     this.state ={inputValue:"",
+    passwordVisibility:"password",
     passwordVisible:false};
     this.handleChange=this.handleChange.bind(this);
-    this.handlePassword=this.handlePassword.bind(this);
+    this.handlePasswordVisibility=this.handlePasswordVisibility.bind(this);
   }
 
   handleChange(event){
@@ -23,7 +24,7 @@ class TextInput  extends Component {
     })
   }
 
-  handlePassword(){
+  handlePasswordVisibility(){
     this.setState({passwordVisible:true})
   }
 
@@ -34,7 +35,7 @@ class TextInput  extends Component {
       return (
         <div>
         <Input
-        type={this.props.type}
+        type={this.state.passwordVisible? "text":"password" }
         label={this.props.label}
         defaultValue={this.props.value}
         startAdornment={
@@ -44,7 +45,7 @@ class TextInput  extends Component {
         }
         endAdornment={
           <InputAdornment position="end">
-          <IconButton aria-label="Toggle password visibility" onClick={this.handlePassword}>
+          <IconButton aria-label="Toggle password visibility" onClick={this.handlePasswordVisibility}>
             {this.state.passwordVisible ? <Visibility /> : <VisibilityOff />}
           </IconButton>
           </InputAdornment>
