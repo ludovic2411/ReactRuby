@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import TextInput from './presentationnal/input';
 import Submit from './presentationnal/submit';
+import email from './validation/email';
 
 class signUp  extends Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class signUp  extends Component {
 
   handleSubmit(event){
     event.preventDefault();
-    if(this.state.email==="foo" && this.state.password==="bar"&& this.state.passwordConfirmation===this.state.password){
+    if(email(this.state.email) && this.state.password==="bar"&& this.state.passwordConfirmation===this.state.password){
       alert("registrered!")
     }
   }

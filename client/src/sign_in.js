@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import TextInput from './presentationnal/input';
 import Submit from './presentationnal/submit';
+import email from './validation/email';
+import string from './validation/sanitization';
 
 class signIn  extends Component {
 
@@ -15,7 +17,7 @@ class signIn  extends Component {
 
   handleSubmit(event){
     event.preventDefault();
-    if(this.state.email==="foo" && this.state.password==="bar"){
+    if(email(this.state.email) && this.state.email==="foo@foo.com" && this.state.password==="bar" && string(this.state.password)){
       alert("login!")
     }
   }

@@ -1,12 +1,14 @@
-let regex=new RegExp('[@]','g')
+import validator from 'validator';
 
 const email=(input)=>{
   input.trim();
-  if(regex.exec(input)===null){
-    console.log("not a valide email");
+  validator.escape(input);
+  if(validator.isEmail(input)){
+    validator.normalizeEmail(input);
+    return true
   }else {
-    console.log("valid");
+    return false
   }
 }
 
-email("totototo@com");
+export default email;
