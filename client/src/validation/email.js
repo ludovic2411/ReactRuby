@@ -1,13 +1,17 @@
 import validator from 'validator';
 
 const email=(input)=>{
-  input.trim();
-  validator.escape(input);
-  if(validator.isEmail(input)){
-    validator.normalizeEmail(input);
-    return true
+  if (!validator.isEmpty(input)) {
+    input.trim();
+    validator.escape(input);
+    if(validator.isEmail(input)){
+      validator.normalizeEmail(input);
+      return true
+    }else {
+      return false
+    }
   }else {
-    return false
+    return false;
   }
 }
 
